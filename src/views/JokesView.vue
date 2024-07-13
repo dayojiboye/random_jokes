@@ -29,7 +29,7 @@
 import CustomDropdownVue from "@/components/CustomDropdown.vue";
 import JokePanelVue from "@/components/JokePanel.vue";
 import axios from "axios";
-import { onMounted, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { JokeCategories, Status } from "@/enums";
 import LoadingSpinnerVue from "@/components/LoadingSpinner.vue";
 
@@ -57,7 +57,5 @@ async function getJoke() {
   }
 }
 
-onMounted(() => getJoke());
-
-watch(currentCategory, () => getJoke());
+watch(currentCategory, () => getJoke(), { immediate: true });
 </script>
