@@ -25,7 +25,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import CustomDropdownVue from "@/components/CustomDropdown.vue";
 import JokePanelVue from "@/components/JokePanel.vue";
 import axios from "axios";
@@ -33,11 +33,11 @@ import { ref, watch } from "vue";
 import { JokeCategories, Status } from "@/enums";
 import LoadingSpinnerVue from "@/components/LoadingSpinner.vue";
 
-const currentStatus = ref(Status.IDLE);
-const joke = ref("");
-const currentCategory = ref(JokeCategories.ANY);
+const currentStatus = ref<Status>(Status.IDLE);
+const joke = ref<string>("");
+const currentCategory = ref<JokeCategories>(JokeCategories.ANY);
 
-function handleSelectCategory(category) {
+function handleSelectCategory(category: JokeCategories) {
   currentCategory.value = category;
 }
 

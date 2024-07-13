@@ -43,17 +43,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { JokeCategories } from "../enums";
 
-const showMenu = ref(false);
+type Props = { currentValue: string };
 
-defineProps({
-  currentValue: String
-});
+type Emits = { onSelectMenuItem: [category: JokeCategories] };
 
-defineEmits(["onSelectMenuItem"]);
+const showMenu = ref<boolean>(false);
+
+defineProps<Props>();
+
+defineEmits<Emits>();
 
 function onClickOutside() {
   showMenu.value = false;

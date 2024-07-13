@@ -22,12 +22,16 @@
   </div>
 </template>
 
-<script setup>
-defineProps({
-  joke: String
-});
+<script setup lang="ts">
+type Props = {
+  joke: string;
+};
 
-defineEmits(["onGetMoreJokes"]);
+type Emits = { onGetMoreJokes: [] };
+
+defineProps<Props>();
+
+defineEmits<Emits>();
 </script>
 
 <style scoped></style>
