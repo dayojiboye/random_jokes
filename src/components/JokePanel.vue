@@ -15,7 +15,7 @@
           class="flex items-center justify-center w-[150px] px-4 py-3 bg-slate-600 font-medium text-sm text-white"
           @click="$emit('onGetMoreJokes')"
         >
-          Get more jokes
+          Get new joke
         </button>
       </div>
     </div>
